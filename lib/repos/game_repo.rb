@@ -1,11 +1,11 @@
 module RpsGame
 
 	class GameRepo
-		def self.create_match(db, game_data)
+		def self.create_game(db, game_data)
 			the_time = Time.now
 
     		q = <<-SQL
-    		INSERT INTO games(start_time, user_id_one, user_id_two) 
+    		INSERT INTO matches(start_time, user_id_one, user_id_two) 
     		VALUES($1, $2) RETURNING 'id'; 
     		SQL
 
